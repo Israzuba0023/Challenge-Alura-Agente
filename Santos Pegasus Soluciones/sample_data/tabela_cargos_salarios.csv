@@ -1,0 +1,11 @@
+Cargo,Nivel,Faixa_Inicial_BRL,Faixa_Final_BRL,Certificacao_Recomendada,Dominio
+Engenheiro de Software Backend,SE I,7500.00,10500.00,Java SE 17 / Go Certified,Engenharia Back-end
+Engenheiro de Software Backend,SE II,11000.00,15000.00,CKAD / Oracle Cloud Infrastructure Architect,Engenharia Back-end
+Engenheiro de Software Backend,Senior,16000.00,22000.00,OCI Professional / AWS Solutions Architect,Engenharia Back-end
+Engenheiro de Software Backend,Staff / Specialist,23000.00,32000.00,Kubernetes CKA / Distributed Systems Specialist,Engenharia Back-end
+Engenheiro Frontend,SE I,7000.00,10000.00,React Certified / Modern JS,Engenharia Front-end
+Engenheiro Frontend,SE II,10500.00,14500.00,Web Performance Specialist,Engenharia Front-end
+Engenheiro Frontend,Senior,15500.00,21000.00,Frontend Architecture Specialist,Engenharia Front-end
+Arquiteto de Solucoes & IA,Principal,25000.00,38000.00,OCI AI Specialist / Generative AI Professional,Estratégico & IA
+Especialista em Site Reliability (SRE),Senior,17000.00,24000.00,Chaos Engineering / OCI Operations,Resiliência & Operações
+Analista de Compliance & LGPD,Pleno/Senior,12000.00,18000.00,CIPM / CDPO LGPD,Legal & Compliance

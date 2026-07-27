@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegasus Intelligence | Agente Corporativo AI — Santos Pegasus Soluciones</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Highlight.js for Code Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-horse-head"></i>
+                </div>
+                <div class="brand-text">
+                    <h2>Santos Pegasus</h2>
+                    <span>INTELLIGENCE AGENT</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="chat-tab">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Chat Conversacional</span>
+                </button>
+                <button class="nav-item" data-tab="docs-tab">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Central de Documentos</span>
+                </button>
+                <button class="nav-item" data-tab="metrics-tab">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Métricas & Dashboard</span>
+                </button>
+                <button class="nav-item" data-tab="oci-tab">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span>Infraestrutura OCI</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-status">
+                <div class="status-indicator">
+                    <span class="pulse-dot"></span>
+                    <span class="status-text">OCI Cloud: sa-saopaulo-1</span>
+                </div>
+                <div class="version-badge">Agente Corp v2.0</div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navbar -->
+            <header class="top-header">
+                <div class="header-title">
+                    <h1 id="page-title">Assistente Inteligente Corporativo</h1>
+                    <p id="page-subtitle">Base de conhecimento conversacional integrada aos documentos internos</p>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="domain-filter-wrapper">
+                        <i class="fa-solid fa-filter"></i>
+                        <select id="category-select" class="custom-select">
+                            <option value="Todos">Todas as Categorias</option>
+                            <option value="Engenharia Back-end">Engenharia Back-end</option>
+                            <option value="Engenharia Front-end">Engenharia Front-end</option>
+                            <option value="Arquitetura & Sistemas">Arquitetura & Microsserviços</option>
+                            <option value="Onboarding & Pessoas">Onboarding & Desenvolvedores</option>
+                            <option value="Resiliência & Operações">Resiliência & Incidentes</option>
+                            <option value="Recursos Humanos">Recursos Humanos & Benefícios</option>
+                            <option value="Financeiro e Contábil">Financeiro & Reembolsos</option>
+                        </select>
+                    </div>
+
+                    <button id="btn-reload-kb" class="btn-secondary" title="Recarregar Base de Conhecimento">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Tab 1: Chat Conversacional -->
+            <section id="chat-tab" class="tab-content active">
+                <div class="chat-container">
+                    <div id="chat-messages" class="messages-scroll">
+                        <!-- Banner de Boas-Vindas -->
+                        <div class="welcome-banner">
+                            <div class="welcome-icon">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <h2>Bem-vindo à Base de Conhecimento da Santos Pegasus!</h2>
+                            <p>Eu sou o Agente Inteligente corporativo. Posso responder qualquer dúvida sobre os nossos guias técnicos, microsserviços, resiliência, processos de onboarding, benefícios e políticas internas.</p>
+                            
+                            <div class="quick-prompts-grid">
+                                <div class="prompt-card" data-prompt="Quais são as diretrizes do Guia Oficial de Engenharia Back-end para Java e microsserviços?">
+                                    <i class="fa-solid fa-code-branch"></i>
+                                    <h4>Padrões Back-end</h4>
+                                    <p>Arquitetura Java 17, Spring Boot e Microsserviços em OCI</p>
+                                </div>
+
+                                <div class="prompt-card" data-prompt="Qual o procedimento para incidentes P0/SEV-0 conforme o Manual de Resiliência v7.0?">
+                                    <i class="fa-solid fa-shield-cat"></i>
+                                    <h4>Incidentes P0 / SEV-0</h4>
+                                    <p>War room, PagerDuty, circuit breaker e post-mortem</p>
+                                </div>
+
+                                <div class="prompt-card" data-prompt="Como funciona o onboarding de novos desenvolvedores na Santos Pegasus Soluciones?">
+                                    <i class="fa-solid fa-user-astronaut"></i>
+                                    <h4>Manual de Onboarding</h4>
+                                    <p>Configuração de ambiente, acessos, buddy e entregas</p>
+                                </div>
+
+                                <div class="prompt-card" data-prompt="Quais os benefícios, auxílio home office e diárias de reembolso de viagem?">
+                                    <i class="fa-solid fa-gift"></i>
+                                    <h4>Benefícios & Reembolso</h4>
+                                    <p>Plano de saúde, home office R$ 450 e limites de viagem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input Bar -->
+                    <div class="chat-input-area">
+                        <form id="chat-form" class="chat-form">
+                            <div class="input-wrapper">
+                                <textarea id="query-input" placeholder="Faça uma pergunta sobre os manuais, normas ou procedimentos..." rows="1"></textarea>
+                                <button type="submit" id="send-btn" class="btn-send">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="chat-footer-note">
+                            <i class="fa-solid fa-shield-halved"></i> Agente Interno Corporativo — Santos Pegasus Soluciones • Suporte RAG Multi-Formato
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 2: Central de Documentos -->
+            <section id="docs-tab" class="tab-content">
+                <div class="docs-view">
+                    <div class="docs-header-card">
+                        <div>
+                            <h3>Base de Dados & Documentos Ingeridos</h3>
+                            <p>O agente processa e consulta 8 formatos de arquivo corporativos em tempo real.</p>
+                        </div>
+                        <div class="formats-pills">
+                            <span class="pill pdf"><i class="fa-solid fa-file-pdf"></i> PDF</span>
+                            <span class="pill docx"><i class="fa-solid fa-file-word"></i> Word</span>
+                            <span class="pill xlsx"><i class="fa-solid fa-file-excel"></i> Excel</span>
+                            <span class="pill pptx"><i class="fa-solid fa-file-powerpoint"></i> PPT</span>
+                            <span class="pill md"><i class="fa-solid fa-file-code"></i> Markdown</span>
+                            <span class="pill csv"><i class="fa-solid fa-file-csv"></i> CSV</span>
+                            <span class="pill json"><i class="fa-solid fa-brackets-curly"></i> JSON</span>
+                            <span class="pill html"><i class="fa-solid fa-globe"></i> HTML</span>
+                        </div>
+                    </div>
+
+                    <!-- Upload Zone -->
+                    <div class="upload-card">
+                        <h4><i class="fa-solid fa-cloud-arrow-up"></i> Upload de Novos Documentos Corporativos</h4>
+                        <p>Adicione PDFs, políticas em Markdown, planilhas CSV, tabelas JSON ou documentos Word para expandir o conhecimento do agente.</p>
+                        
+                        <div class="drop-zone" id="drop-zone">
+                            <i class="fa-solid fa-folder-plus drop-icon"></i>
+                            <p>Arraste e solte arquivos aqui ou <span class="browse-text">clique para navegar</span></p>
+                            <input type="file" id="file-input" hidden accept=".pdf,.docx,.xlsx,.pptx,.csv,.json,.md,.html,.txt">
+                        </div>
+                        <div id="upload-status" class="upload-status"></div>
+                    </div>
+
+                    <!-- Documents Table -->
+                    <div class="table-card">
+                        <h4>Documentos Indexados na Base</h4>
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome do Arquivo</th>
+                                    <th>Formato</th>
+                                    <th>Domínio / Categoria</th>
+                                    <th>Chunks Processados</th>
+                                    <th>Tamanho</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="docs-table-body">
+                                <!-- Preenchido dinamicamente via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 3: Métricas & Dashboard -->
+            <section id="metrics-tab" class="tab-content">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon blue">
+                            <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div class="metric-data">
+                            <span class="metric-label">Consultas Atendidas</span>
+                            <h2 id="metric-queries">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon green">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <div class="metric-data">
+                            <span class="metric-label">Documentos Ingeridos</span>
+                            <h2 id="metric-docs">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon purple">
+                            <i class="fa-solid fa-cubes"></i>
+                        </div>
+                        <div class="metric-data">
+                            <span class="metric-label">Chunks Vetoriais</span>
+                            <h2 id="metric-chunks">0</h2>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon orange">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div class="metric-data">
+                            <span class="metric-label">Tempo de Resposta Médio</span>
+                            <h2 id="metric-latency">48 ms</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-details">
+                    <div class="card detail-card">
+                        <h4><i class="fa-solid fa-pie-chart"></i> Distribuição por Domínio Organizacional</h4>
+                        <ul id="category-distribution-list" class="dist-list">
+                            <!-- Preenchido via JS -->
+                        </ul>
+                    </div>
+
+                    <div class="card detail-card">
+                        <h4><i class="fa-solid fa-server"></i> Status dos Serviços & RAG Pipeline</h4>
+                        <div class="status-rows">
+                            <div class="status-row">
+                                <span>FastAPI Backend Server</span>
+                                <span class="badge success"><i class="fa-solid fa-check"></i> Ativo (Porta 8000)</span>
+                            </div>
+                            <div class="status-row">
+                                <span>Motor RAG & Embeddings Híbridos</span>
+                                <span class="badge success"><i class="fa-solid fa-check"></i> BM25 + Cosine Index</span>
+                            </div>
+                            <div class="status-row">
+                                <span>Oracle Cloud Infrastructure (OCI)</span>
+                                <span class="badge success"><i class="fa-solid fa-cloud"></i> sa-saopaulo-1 Online</span>
+                            </div>
+                            <div class="status-row">
+                                <span>Suporte Multi-Formato</span>
+                                <span class="badge info">8 Formatos Ativos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 4: OCI Cloud Status -->
+            <section id="oci-tab" class="tab-content">
+                <div class="oci-container-card">
+                    <div class="oci-header">
+                        <div class="oci-logo">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <div>
+                            <h2>Implantação na Oracle Cloud Infrastructure (OCI)</h2>
+                            <p>Infraestrutura de nuvem resiliente, containerizada e de alta disponibilidade.</p>
+                        </div>
+                    </div>
+
+                    <div class="oci-specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Região OCI:</span>
+                            <span class="spec-val">sa-saopaulo-1 (São Paulo, BR)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Serviço OCI Utilizado:</span>
+                            <span class="spec-val">OCI Compute VM & OCI Container Instance</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Arquitetura de Deploy:</span>
+                            <span class="spec-val">Docker Container / Docker Compose</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Disponibilidade / SLA:</span>
+                            <span class="spec-val">99.99% com Security List Habilitado</span>
+                        </div>
+                    </div>
+
+                    <div class="oci-commands-box">
+                        <h4><i class="fa-solid fa-terminal"></i> Comandos Rápidos de Execução no OCI VM</h4>
+                        <pre><code># 1. Clonar repositório público no servidor OCI
+git clone https://github.com/usuario/santos-pegasus-agente.git
+cd santos-pegasus-agente
+
+# 2. Executar script de provisionamento automático
+bash oci_deploy.sh
+
+# 3. Ou subir os containers manualmente via Docker Compose
+docker compose up -d --build</code></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal de Citações e Fontes -->
+    <div id="citation-modal" class="modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-book-open"></i> Detalhes da Fonte Citada</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-citation-body">
+                <!-- Conteúdo dinâmico -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

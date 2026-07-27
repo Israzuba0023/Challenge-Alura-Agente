@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  pegasus-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: santos_pegasus_agent
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-""}
+      - OCI_REGION=sa-saopaulo-1
+    volumes:
+      - ./Docs:/app/Docs
+      - ./sample_data:/app/sample_data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s

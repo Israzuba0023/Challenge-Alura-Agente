@@ -1,0 +1,35 @@
+{
+  "empresa": "Santos Pegasus Soluciones",
+  "documento": "Política de Despesas e Reembolsos Corporativos",
+  "versao": "4.2",
+  "categoria": "Financeiro e Contábil",
+  "regras_reembolso": {
+    "alimentacao_viagem": {
+      "diaria_nacional_brl": 180.00,
+      "diaria_internacional_usd": 85.00,
+      "comprovante_obrigatorio": true,
+      "bebidas_alcoolicas_permitidas": false
+    },
+    "transporte_e_deslocamento": {
+      "reembolso_km_proprio_brl": 1.45,
+      "uber_99_categoria_permitida": ["UberX", "Uber Comfort", "Black (se corporativo internacional)"],
+      "estacionamento_e_pedagio": "100% reembolsável mediante comprovante fiscal"
+    },
+    "viagens_aereas": {
+      "antecedencia_minima_dias": 14,
+      "classe_voo": "Econômica Premium para voos acima de 6 horas",
+      "bagagem_despachada": "1 mala até 23kg inclusa"
+    },
+    "hospedagem": {
+      "teto_diaria_nacional_brl": 450.00,
+      "teto_diaria_internacional_usd": 220.00,
+      "reserva_canal_oficial": "Sistema Concur / Portal de Viagens Pegasus"
+    },
+    "fluxo_aprovacao": [
+      {"valor_max_brl": 1000.00, "aprovador": "Gerente Direto de Engenharia"},
+      {"valor_max_brl": 5000.00, "aprovador": "Diretor da Área"},
+      {"valor_acima_brl": 5000.01, "aprovador": "CFO / Controladoria Financeira"}
+    ],
+    "prazo_pagamento": "Reembolsos aprovados até quarta-feira são creditados na sexta-feira da mesma semana."
+  }
+}

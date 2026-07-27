@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>SOP - Procedimento Operacional de Resposta a Incidentes P0/P1</title>
+</head>
+<body>
+    <article>
+        <h1>Procedimento Operacional Padrão (SOP): Resposta a Incidentes Críticos</h1>
+        <p><strong>Organização:</strong> Santos Pegasus Soluciones | <strong>Domínio:</strong> Operacional & SRE</p>
+        
+        <section>
+            <h2>1. Definir Gravidade do Incidente</h2>
+            <ul>
+                <li><strong>SEV-0 (P0 - Crítico):</strong> Parada total de serviços vitais, indisponibilidade do gateway principal em OCI ou vazamento potencial de dados. Tempo de reação máximo (MTTA): 5 minutos. Target de resolução (MTTR): &lt; 45 minutos.</li>
+                <li><strong>SEV-1 (P1 - Alto):</strong> Degradação severa da performance (&gt; 2% das requisições com erro 5xx) ou indisponibilidade parcial de microsserviço secundário. MTTA: 15 minutos. MTTR: &lt; 2 horas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Protocolo de Ação e Comunicação (War Room)</h2>
+            <ol>
+                <li><strong>Acionamento PagerDuty:</strong> O SRE de sobreaviso aciona o canal de emergência no Slack (<code>#incident-war-room</code>).</li>
+                <li><strong>Abertura de Ponte Huddle/Meet:</strong> Criação imediata do link de videoconferência para coordenação do Incident Commander (IC).</li>
+                <li><strong>Designação de Papéis:</strong>
+                    <ul>
+                        <li><strong>Incident Commander (IC):</strong> Lidera a investigação e tomada de decisões estratégicas.</li>
+                        <li><strong>Tech Lead / Operations:</strong> Analisa métricas no Grafana, logs no Datadog/OCI Logging e realiza mitigação.</li>
+                        <li><strong>Communications Lead:</strong> Atualiza a página de Status da Empresa a cada 15 minutos para clientes e executivos.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>3. Estratégias de Mitigação Imediata</h2>
+            <p>Priorizar a rápida recuperação do serviço em vez de identificar a causa raiz na fase inicial:</p>
+            <ul>
+                <li>Acionar Circuit Breakers via Resilience4j se houver sobrecarga de dependência externa.</li>
+                <li>Realizar Rollback imediato do último deploy se o erro tiver surgido após publicação.</li>
+                <li>Escalar horizontalmente os Pods Kubernetes em OCI OKE para conter picos atípicos de tráfego.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Post-Mortem Blameless e Lições Aprendidas</h2>
+            <p>Em até 48 horas após a resolução do incidente SEV-0 ou SEV-1, o IC deve organizar a reunião de Blameless Post-Mortem com o documento contendo a linha do tempo exata, os 5 Porquês e o plano de ação de prevenção no Jira.</p>
+        </section>
+    </article>
+</body>
+</html>
